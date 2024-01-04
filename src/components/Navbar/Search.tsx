@@ -35,7 +35,7 @@ function Search() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='relative w-full md:w-[400px] flex items-center'
+      className='relative basis-full md:basis-[25rem] flex items-center'
     >
       <Input
         {...register('search', { required: true })}

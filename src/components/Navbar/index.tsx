@@ -5,8 +5,8 @@ import Actions from './actions';
 
 export const Navbar = () => {
   return (
-    <nav className='p-4 lg:px-6 bg-muted flex justify-between items-center shadow-sm'>
-      <Link href='/' className='hidden md:inline-flex'>
+    <nav className='p-4 lg:px-6 bg-muted flex justify-between items-center border-b gap-2'>
+      <Link href='/'>
         <Logo />
       </Link>
       <Search />

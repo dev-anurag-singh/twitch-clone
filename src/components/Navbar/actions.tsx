@@ -1,26 +1,27 @@
-'use client';
-
 import Link from 'next/link';
 import { Clapperboard } from 'lucide-react';
-import { SignInButton, UserButton, useUser } from '@clerk/nextjs';
+import { SignInButton, UserButton, currentUser } from '@clerk/nextjs';
+
 import { Button } from '@/components/ui/button';
 
-const Actions = () => {
-  const { isSignedIn, user, isLoaded } = useUser();
+const Actions = async () => {
+  const user = await currentUser();
 
   return (
-    <div className='flex items-center justify-end gap-x-2 ml-4 lg:ml-0'>
-      {!isSignedIn && (
+    <div className='flex items-center justify-end'>
+      {!user && (
         <SignInButton>
-          <Button size='sm'>Login</Button>
+          <Button size='sm' variant='default'>
+            Login
+          </Button>
         </SignInButton>
       )}
-      {isSignedIn && (
-        <div className='flex items-center gap-x-4'>
+      {!!user && (
+        <div className='flex items-center gap-3 md:gap-4'>
           <Button
             size='sm'
             variant='ghost'
-            className='text-muted-foreground hover:text-primary'
+            className='text-muted-foreground hover:text-primary px-0'
             asChild
           >
             <Link href={`/u/${user.username}`}>
