@@ -1,4 +1,10 @@
-function Logo() {
+function Logo({
+  width = 40,
+  height = 40,
+}: {
+  width?: number;
+  height?: number;
+}) {
   return (
     <svg
       version='1.1'
@@ -9,8 +15,9 @@ function Logo() {
       y='0px'
       viewBox='0 0 2400 2800'
       xmlSpace='preserve'
-      width={40}
-      height={40}
+      width={width}
+      height={height}
+      className='h-10'
     >
       <g>
         <polygon
