@@ -31,7 +31,7 @@ export const ToggleCard = ({
   };
 
   return (
-    <div className='rounded-xl border p-6 shadow-md'>
+    <div className='rounded-xl bg-muted/50 p-6 shadow-md'>
       <div className='flex items-center justify-between'>
         <p className='font-semibold shrink-0'>{label}</p>
         <div className='space-y-2'>
