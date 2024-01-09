@@ -13,7 +13,7 @@ import { LiveBadge } from '@/components/live-badge';
 interface UserItemProps {
   username: string;
   imageUrl: string;
-  isLive: boolean;
+  isLive?: boolean;
 }
 
 const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
