@@ -3,13 +3,6 @@
 import { getSelf } from '@/lib/services/auth-service';
 import { blockUser, unblockUser } from '@/lib/services/block-service';
 import { revalidatePath } from 'next/cache';
-// import { RoomServiceClient } from 'livekit-server-sdk';
-
-// const roomService = new RoomServiceClient(
-//   process.env.LIVEKIT_API_URL!,
-//   process.env.LIVEKIT_API_KEY!,
-//   process.env.LIVEKIT_API_SECRET!
-// );
 
 export const onBlock = async (id: string) => {
   const self = await getSelf();
