@@ -15,7 +15,7 @@ function StreamPlayer({ user, stream, isFollowing }: StreamPlayerProps) {
     return <div>Cannot watch the stream</div>;
   }
 
-  return <div> Allowed to watch the stream</div>;
+  return <div>You&apos;re Allowed to watch the stream</div>;
 }
 
 export default StreamPlayer;
