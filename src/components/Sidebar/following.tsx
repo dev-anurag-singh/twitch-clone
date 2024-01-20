@@ -23,7 +23,7 @@ export const Following = ({ data }: FollowingProps) => {
           <p className='text-sm text-muted-foreground'>Following</p>
         </div>
       )}
-      <ul>
+      <ul className='space-y-2 px-2'>
         {data.map(follow => (
           <UserItem
             key={follow.id}

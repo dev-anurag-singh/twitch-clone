@@ -1,4 +1,4 @@
-import FollowUser from '@/components/follow-user';
+import StreamPlayer from '@/components/stream-player/stream-player';
 import { isBlockedByUser } from '@/lib/services/block-service';
 import { isFollowingUser } from '@/lib/services/follow-service';
 import { getUserByUsername } from '@/lib/services/user-service';
@@ -12,8 +12,7 @@ interface UserPageProps {
 
 async function UserPage({ params: { username } }: UserPageProps) {
   const user = await getUserByUsername(username);
-
-  if (!user) {
+  if (!user || !user.stream) {
     notFound();
   }
 
@@ -25,10 +24,7 @@ async function UserPage({ params: { username } }: UserPageProps) {
   }
 
   return (
-    <div>
-      User: {username}
-      <FollowUser isFollowing={isFollowing} userId={user.id} />
-    </div>
+    <StreamPlayer user={user} stream={user.stream} isFollowing={isFollowing} />
   );
 }
 
