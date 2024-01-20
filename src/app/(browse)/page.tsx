@@ -1,7 +1,13 @@
-export default function HomePage() {
+import { Suspense } from 'react';
+
+import { Results, ResultsSkeleton } from '@/components/results';
+
+export default function Page() {
   return (
-    <div>
-      <h1 className='text-red-500 text-xl'>Home Page</h1>
+    <div className='h-full p-8 max-w-screen-2xl mx-auto'>
+      <Suspense fallback={<ResultsSkeleton />}>
+        <Results />
+      </Suspense>
     </div>
   );
 }
