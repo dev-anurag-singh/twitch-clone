@@ -29,7 +29,7 @@ const UserItem = ({ username, imageUrl, isLive }: UserItemProps) => {
       asChild
       variant='ghost'
       className={cn(
-        'w-full h-12',
+        'w-full h-12 hover:bg-white/20',
         collapsed ? 'justify-center' : 'justfy-start',
         isActive && 'bg-background/50 pointer-events-none'
       )}
