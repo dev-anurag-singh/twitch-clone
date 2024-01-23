@@ -4,7 +4,6 @@ import { createUploadthing, type FileRouter } from 'uploadthing/next';
 
 const f = createUploadthing();
 
-// FileRouter for your app, can contain multiple FileRoutes
 export const ourFileRouter = {
   thumbnailUploader: f({
     image: {
